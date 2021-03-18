@@ -1,0 +1,37 @@
+<h1>OS</h1>
+<h2>The <i>OS</i> module has system functions related to the operating system of the current user.</h2>
+
+
+<fieldset>
+    <legend>RunCommand</legend>
+    <b>type a command and press CTRL + Enter to execute...</b><br>
+    <input type="text" value.bind="command" keydown.delegate="onKeyDown($event)" placeholder="type a command">
+    <pre if.bind="output">Output: ${output}</pre>
+
+</fieldset>
+
+<fieldset>
+    <legend>Environment</legend>
+
+    <input value.bind="envKey">
+    <input type="button" click.trigger="showEnvKeyValue()" disabled.bind="envKey==''" value="get">
+
+</fieldset>
+
+<fieldset>
+    <legend>dialog</legend>
+
+    <input value.bind="dialogTitle">
+    <input type="button" click.trigger="showDialogOpen()" value="show 'open' dialog">
+    <input type="button" click.trigger="showDialogSave()" value="show 'save' dialog">
+
+</fieldset>
+
+<fieldset>
+    <legend>Notifications</legend>
+
+    <input value.bind="ntitle">
+    <input value.bind="nbody">
+    <input type="button" click.trigger="showNotification()" disabled.bind="ntitle==''" value="show">
+
+</fieldset>

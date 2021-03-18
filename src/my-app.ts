@@ -1,17 +1,14 @@
 
 export class MyApp {
 
-    close() {
-        Neutralino.app.exit(() => {
+    exit() {
 
-        }, () => { });
+        if (confirm("you sure?")) {
+            Neutralino.app.exit(() => {
+
+            }, () => { });
+        }
     }
 
-    public showSettings(): void {
-        Neutralino.settings.getSettings((data) => {
-            alert(JSON.stringify(data));
-        }, () => {
 
-        });
-    }
 }
